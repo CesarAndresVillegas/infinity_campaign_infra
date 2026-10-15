@@ -6,8 +6,10 @@ variable "aws_region" {
 variable "cloudflare_api_token" {
   type      = string
   sensitive = true
+  default   = ""
 }
 
 variable "cloudflare_account_id" {
-  type = string
+  type    = string
+  default = ""
 }
