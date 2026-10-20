@@ -18,6 +18,13 @@ resource "aws_cognito_user_pool" "this" {
       priority = 1
     }
   }
+
+  dynamic "lambda_config" {
+    for_each = var.post_confirmation_lambda_arn == null ? [] : [1]
+    content {
+      post_confirmation = var.post_confirmation_lambda_arn
+    }
+  }
 }
 
 resource "aws_cognito_user_pool_client" "frontend" {
