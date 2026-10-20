@@ -22,6 +22,11 @@ module "lambda" {
   cognito_user_pool_arn            = module.cognito.user_pool_arn
   post_confirmation_function_name = local.post_confirmation_function_name
   frontend_origin                  = var.frontend_origin
+  cloudflare_account_id            = var.cloudflare_account_id
+  r2_access_key_id                 = var.r2_access_key_id
+  r2_secret_access_key             = var.r2_secret_access_key
+  r2_bucket_name                   = var.r2_bucket_name
+  r2_public_url                    = var.r2_public_url
 }
 
 output "cognito_user_pool_id" {

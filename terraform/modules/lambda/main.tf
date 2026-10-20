@@ -30,6 +30,11 @@ resource "aws_lambda_function" "api" {
       DATABASE_URL         = var.database_url
       COGNITO_USER_POOL_ID = var.cognito_user_pool_id
       COGNITO_CLIENT_ID    = var.cognito_client_id
+      R2_ENDPOINT          = "https://${var.cloudflare_account_id}.r2.cloudflarestorage.com"
+      R2_ACCESS_KEY_ID     = var.r2_access_key_id
+      R2_SECRET_ACCESS_KEY = var.r2_secret_access_key
+      R2_BUCKET_NAME       = var.r2_bucket_name
+      R2_PUBLIC_URL        = var.r2_public_url
     }
   }
 }
